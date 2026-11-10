@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application web de démonstration DevOps avec Docker et Jenkins">
+    <title>DevOps Web App | Accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">DevOps<span>Web</span></a>
+
+            <nav>
+                <a href="#accueil">Accueil</a>
+                <a href="#apropos">À propos</a>
+                <a href="#technologies">Technologies</a>
+            </nav>
+
+            <a href="#technologies" class="nav-button">Découvrir</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="accueil">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="tag">PROJET INTRODUCTION AU DEVOPS</span>
+
+                    <h1>
+                        Développer.<br>
+                        Automatiser.<br>
+                        <span>Déployer.</span>
+                    </h1>
+
+                    <p>
+                        Découvrez notre application web qui met en pratique
+                        l'intégration continue et le déploiement continu
+                        avec Jenkins et Docker.
+                    </p>
+
+                    <a href="#technologies" class="primary-button">
+                        Explorer le projet →
+                    </a>
+                </div>
+
+                <div class="hero-card">
+                    <div class="card-top">
+                        <span class="status-dot"></span>
+                        Application opérationnelle
+                    </div>
+
+                    <div class="code-icon">DEVOPS</div>
+
+                    <h2>CI / CD Pipeline</h2>
+                    <p>Build · Test · Push · Deploy</p>
+
+                    <div class="progress">
+                        <div></div>
+                    </div>
+
+                    <small>Automatisation du déploiement</small>
+                </div>
+            </div>
+        </section>
+
+        <section class="about container" id="apropos">
+            <span class="section-tag">NOTRE PROJET</span>
+            <h2>Une application, un processus automatisé.</h2>
+            <p>
+                Ce projet consiste à conteneuriser une application web
+                statique avec Docker et à automatiser son cycle de vie
+                grâce à un pipeline Jenkins.
+            </p>
+        </section>
+
+        <section class="technologies" id="technologies">
+            <div class="container">
+                <span class="section-tag">NOS OUTILS</span>
+                <h2>Technologies utilisées</h2>
+
+                <div class="tech-grid">
+                    <article class="tech-card">
+                        <div class="tech-icon">J</div>
+                        <h3>Jenkins</h3>
+                        <p>Automatisation du pipeline CI/CD.</p>
+                    </article>
+
+                    <article class="tech-card">
+                        <div class="tech-icon">D</div>
+                        <h3>Docker</h3>
+                        <p>Construction et exécution des conteneurs.</p>
+                    </article>
+
+                    <article class="tech-card">
+                        <div class="tech-icon">N</div>
+                        <h3>Nginx</h3>
+                        <p>Hébergement de notre application web.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 DevOps Web App — Projet pédagogique DevOps.</p>
+    </footer>
+
+</body>
+</html>
