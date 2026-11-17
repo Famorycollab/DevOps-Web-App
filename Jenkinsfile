@@ -77,10 +77,10 @@ pipeline {
                         powershell -NoProfile -NonInteractive -Command "$env:DOCKER_PASS | & $env:DOCKER login -u $env:DOCKER_USER --password-stdin; exit $LASTEXITCODE"
                         if errorlevel 1 goto failed
 
-                        "%DOCKER%" push %IMAGE%:build-%BUILD_NUMBER%
+                        powershell -NoProfile -NonInteractive -Command "for ($i = 1; $i -le 3; $i++) { & $env:DOCKER push ($env:IMAGE + ':build-' + $env:BUILD_NUMBER); if ($LASTEXITCODE -eq 0) { exit 0 }; if ($i -lt 3) { Start-Sleep -Seconds 10 } }; exit 1"
                         if errorlevel 1 goto failed
 
-                        "%DOCKER%" push %IMAGE%:latest
+                        powershell -NoProfile -NonInteractive -Command "for ($i = 1; $i -le 3; $i++) { & $env:DOCKER push ($env:IMAGE + ':latest'); if ($LASTEXITCODE -eq 0) { exit 0 }; if ($i -lt 3) { Start-Sleep -Seconds 10 } }; exit 1"
                         if errorlevel 1 goto failed
 
                         "%DOCKER%" logout
