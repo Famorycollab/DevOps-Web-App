@@ -62,7 +62,7 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'dockerhub-credss',
+                        credentialsId: 'dockerhub-push',
                         usernameVariable: 'DOCKER_USER',
                         passwordVariable: 'DOCKER_PASS'
                     )
@@ -74,7 +74,7 @@ pipeline {
                         set "DOCKER_CONFIG=%WORKSPACE%\\.docker-auth"
                         if not exist "%DOCKER_CONFIG%" mkdir "%DOCKER_CONFIG%"
 
-                        echo %DOCKER_PASS% | "%DOCKER%" login -u %DOCKER_USER% --password-stdin
+                        powershell -NoProfile -NonInteractive -Command "$env:DOCKER_PASS | & $env:DOCKER login -u $env:DOCKER_USER --password-stdin; exit $LASTEXITCODE"
                         if errorlevel 1 goto failed
 
                         "%DOCKER%" push %IMAGE%:build-%BUILD_NUMBER%
