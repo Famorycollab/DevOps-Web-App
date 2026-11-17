@@ -95,11 +95,24 @@ pipeline {
                 }
             }
         }
+
+        stage('5 - Deploy Docker Compose') {
+            steps {
+                bat '''
+                    @echo off
+                    "%DOCKER%" compose -f "%WORKSPACE%\\docker-compose.yml" pull
+                    if errorlevel 1 exit /b 1
+
+                    "%DOCKER%" compose -f "%WORKSPACE%\\docker-compose.yml" up -d
+                    if errorlevel 1 exit /b 1
+                '''
+            }
+        }
     }
 
     post {
         success {
-            echo 'SUCCESS : Build, Smoke Test et Push Docker Hub termines.'
+            echo 'SUCCESS : Checkout, Build, Smoke Test, Push Docker Hub et Deploy Docker Compose termines.'
         }
         failure {
             echo 'ECHEC : Une etape du pipeline a echoue. Consulter les logs.'
