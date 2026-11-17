@@ -14,7 +14,7 @@
         <div class="container navbar">
             <a href="#" class="logo">DevOps<span>Web</span></a>
 
-            <nav>
+            <nav aria-label="Navigation principale">
                 <a href="#accueil">Accueil</a>
                 <a href="#apropos">À propos</a>
                 <a href="#technologies">Technologies</a>
@@ -49,38 +49,59 @@
 
                 <div class="hero-card">
                     <div class="card-top">
+                        <span class="card-label">APERÇU DU PIPELINE</span>
+                        <span class="pipeline-badge"><span class="status-dot"></span>CI / CD</span>
+                    </div>
+
+                    <div class="pipeline-visual" aria-hidden="true">
+                        <span class="pipeline-line"></span>
+                        <span class="pipeline-node">&lt;/&gt;</span>
+                        <span class="pipeline-node">✓</span>
+                        <span class="pipeline-node">↗</span>
+                    </div>
+
+                    <div class="pipeline-steps">
+                        <div>
+                            <strong>Build</strong>
+                            <span>Construire</span>
+                        </div>
+                        <div>
+                            <strong>Test</strong>
+                            <span>Valider</span>
+                        </div>
+                        <div>
+                            <strong>Deploy</strong>
+                            <span>Déployer</span>
+                        </div>
+                    </div>
+
+                    <div class="card-footer">
                         <span class="status-dot"></span>
-                        Application opérationnelle
+                        Un processus reproductible, de bout en bout
                     </div>
-
-                    <div class="code-icon">DEVOPS</div>
-
-                    <h2>CI / CD Pipeline</h2>
-                    <p>Build · Test · Push · Deploy</p>
-
-                    <div class="progress">
-                        <div></div>
-                    </div>
-
-                    <small>Automatisation du déploiement</small>
                 </div>
             </div>
         </section>
 
-        <section class="about container" id="apropos">
-            <span class="section-tag">NOTRE PROJET</span>
-            <h2>Une application, un processus automatisé.</h2>
-            <p>
-                Ce projet consiste à conteneuriser une application web
-                statique avec Docker et à automatiser son cycle de vie
-                grâce à un pipeline Jenkins.
-            </p>
+        <section class="about" id="apropos">
+            <div class="container about-content">
+                <span class="section-tag">NOTRE PROJET</span>
+                <h2>Du code au déploiement,<br>sans friction.</h2>
+                <p>
+                    Ce projet montre comment conteneuriser une application web
+                    statique avec Docker et automatiser son cycle de vie grâce
+                    à un pipeline Jenkins.
+                </p>
+            </div>
         </section>
 
         <section class="technologies" id="technologies">
             <div class="container">
-                <span class="section-tag">NOS OUTILS</span>
-                <h2>Technologies utilisées</h2>
+                <div class="section-heading">
+                    <span class="section-tag">LA STACK TECHNIQUE</span>
+                    <h2>Les bons outils,<br>au bon endroit.</h2>
+                    <p>Trois composants essentiels pour automatiser et servir votre application.</p>
+                </div>
 
                 <div class="tech-grid">
                     <article class="tech-card">
@@ -106,7 +127,10 @@
     </main>
 
     <footer>
-        <p>© 2026 DevOps Web App — Projet pédagogique DevOps.</p>
+        <div class="container footer-content">
+            <a href="#accueil" class="logo">DevOps<span>Web</span></a>
+            <p>© 2026 DevOps Web App <span class="footer-divider">·</span> Projet pédagogique DevOps</p>
+        </div>
     </footer>
 
 </body>
